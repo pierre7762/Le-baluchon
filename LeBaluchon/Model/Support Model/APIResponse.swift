@@ -29,62 +29,63 @@ struct Translation: Codable {
 
 // MARK: - Weather
 struct WeatherApi: Codable {
-    let cnt: Int
+//    let cnt: Int
     let list: [List]
 }
 
 struct List: Codable {
-    let coord: Coord
-    let sys: Sys
+//    let coord: Coord
+//    let sys: Sys
     let weather: [WeatherElement]
     let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt, id: Int
-    let name: String
+//    let visibility: Int
+//    let wind: Wind
+//    let clouds: Clouds
+//    let dt, id: Int
+//    let name: String
 }
 
-struct Clouds: Codable {
-    let all: Int
-}
+//struct Clouds: Codable {
+//    let all: Int
+//}
 
-struct Coord: Codable {
-    let lon, lat: Double
-}
+//struct Coord: Codable {
+//    let lon, lat: Double
+//}
 
 struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity: Int
+    let temp: Double
+    
 
     enum CodingKeys: String, CodingKey {
         case temp
-        case feelsLike = "feels_like"
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
-        case pressure, humidity
+//        case feelsLike = "feels_like"
+//        case tempMin = "temp_min"
+//        case tempMax = "temp_max"
+//        case pressure, humidity
     }
 }
 
-struct Sys: Codable {
-    let country: String
-    let timezone, sunrise, sunset: Int
-}
+//struct Sys: Codable {
+//    let country: String
+//    let timezone, sunrise, sunset: Int
+//}
 
 struct WeatherElement: Codable {
     let id: Int
-    let main: String
+//    let main: String
     let weatherDescription: String
-    let icon: String
+//    let icon: String
 
     enum CodingKeys: String, CodingKey {
-        case id, main
+        case id
+//        case main
         case weatherDescription = "description"
-        case icon
+//        case icon
     }
 }
 
-struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-}
+//struct Wind: Codable {
+//    let speed: Double
+//    let deg: Int
+//}

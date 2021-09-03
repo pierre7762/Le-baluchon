@@ -26,13 +26,14 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F92021F26987AF2002D7E88"
+               BlueprintIdentifier = "8F94EB1626E2162B0073ED0A"
                BuildableName = "LeBaluchonTests.xctest"
                BlueprintName = "LeBaluchonTests"
                ReferencedContainer = "container:LeBaluchon.xcodeproj">

@@ -12,18 +12,22 @@ struct Translater {
     var sourceLanguage: LanguageList
     var sourcetext: String = ""
     var targetLanguage: LanguageList {
+        var targetLang: LanguageList
         if sourceLanguage == .en {
-            return .fr
+            targetLang = .fr
         } else {
-            return .en
+            targetLang = .en
         }
+        return targetLang
     }
     var targetLanguageString: String {
+        var targetLanguageStr: String
         if targetLanguage == .en {
-            return "en"
+            targetLanguageStr = "en"
         } else {
-            return "fr"
+            targetLanguageStr = "fr"
         }
+        return targetLanguageStr
     }
     var translatedText: String = ""
     

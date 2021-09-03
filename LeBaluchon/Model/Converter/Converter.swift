@@ -46,13 +46,13 @@ struct Converter {
     }
     
     mutating func convertedStartedValueWithexchangeRate() -> String {
+        var result = 0.0
         if startingCurrencies == .dollar {
-            let result = Double(round(100 * (startedValue * rateDollarToEuro))/100)
-            return String(result)
+            result = Double(round(100 * (startedValue * rateDollarToEuro))/100)
         } else {
-            let result = Double(round(100 * (startedValue * rateEuroToDollar))/100)
-            return String(result)
+            result = Double(round(100 * (startedValue * rateEuroToDollar))/100)
         }
+        return String(result)
     }
     
     private mutating func determineTheExchangeRateDollarToEuroFromEuroToDollar() -> Double {
@@ -70,18 +70,22 @@ struct Converter {
     }
     
     private mutating func updateCurrencyOfTheResult() -> CurrenciesList {
+        var result: CurrenciesList
         if startingCurrencies == .dollar {
-            return CurrenciesList.euros
+            result = .euros
         } else {
-            return CurrenciesList.dollar
+            result = .dollar
         }
+        return result
     }
     
     private func giveSymbolCurrencies(currencie: CurrenciesList) -> String {
+        var result: String
         if currencie == .dollar {
-            return "$"
+            result = "$"
         } else {
-            return "€"
+            result = "€"
         }
+        return result
     }
 }

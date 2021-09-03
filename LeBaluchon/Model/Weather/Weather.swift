@@ -23,22 +23,12 @@ struct Weather {
         renderLogoWeather()
     }
     
-    enum weatherCode {
-        case thunderstorm
-        case drizzle
-        case rain
-        case snow
-        case atmosphere
-        case clear
-        case clouds
-    }
-    
-    func renderLogoWeather() -> String {
+     private func renderLogoWeather() -> String {
         var goodImage = ""
         
-        if skyStateCode >= 300 && skyStateCode <= 232  {
+        if skyStateCode >= 200 && skyStateCode <= 232  {
             goodImage = "thunderstorm"
-        } else if skyStateCode >= 200 && skyStateCode <= 531  {
+        } else if skyStateCode >= 300 && skyStateCode <= 531  {
             goodImage = "rain"
         } else if skyStateCode >= 600 && skyStateCode <= 622  {
             goodImage = "snow"
@@ -54,18 +44,9 @@ struct Weather {
             goodImage = "cloudy"
         }
         
-        
         return goodImage
     }
 }
 
 
-extension String {
-    func capitalizingFirstLetter() -> String {
-      return prefix(1).uppercased() + self.lowercased().dropFirst()
-    }
 
-    mutating func capitalizeFirstLetter() {
-      self = self.capitalizingFirstLetter()
-    }
-}
