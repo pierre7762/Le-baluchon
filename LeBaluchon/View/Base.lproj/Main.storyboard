@@ -119,7 +119,7 @@
                             <constraint firstItem="bHb-Mh-F6d" firstAttribute="trailing" secondItem="Vum-4l-Kv0" secondAttribute="trailing" constant="103" id="moc-I4-oG1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traduction" id="EVE-9h-OnE"/>
+                    <tabBarItem key="tabBarItem" title="Traduction" image="traduire" id="EVE-9h-OnE"/>
                     <connections>
                         <outlet property="answerTextView" destination="aCM-M7-tNT" id="1wu-oS-OSf"/>
                         <outlet property="buttonTranslate" destination="Vum-4l-Kv0" id="ErP-Jo-R2E"/>
@@ -149,7 +149,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paris" translatesAutoresizingMaskIntoConstraints="NO" id="8gb-Ac-ctb">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="384.5"/>
                                             </imageView>
-                                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJD-Q9-NRE">
+                                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJD-Q9-NRE">
                                                 <rect key="frame" x="40" y="40" width="334" height="304.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-qX-IAq">
@@ -162,13 +162,19 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ziq-Ub-FEK">
-                                                        <rect key="frame" x="20" y="35" width="274" height="0.0"/>
+                                                        <rect key="frame" x="20" y="35" width="274" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="dMw-8M-5Hb"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIC-d3-wgW">
-                                                        <rect key="frame" x="314" y="35" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="314" y="35" width="0.0" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Bzz-Tt-all"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -190,7 +196,7 @@
                                                     <constraint firstItem="Ziq-Ub-FEK" firstAttribute="leading" secondItem="YJD-Q9-NRE" secondAttribute="leading" constant="20" id="YDE-hm-V3a"/>
                                                     <constraint firstItem="NOY-qX-IAq" firstAttribute="leading" secondItem="YJD-Q9-NRE" secondAttribute="leading" constant="20" id="c9W-n4-38Z"/>
                                                     <constraint firstAttribute="trailing" secondItem="iIC-d3-wgW" secondAttribute="trailing" constant="20" id="gVb-5G-Vrx"/>
-                                                    <constraint firstItem="0Vh-mp-GaX" firstAttribute="top" secondItem="Ziq-Ub-FEK" secondAttribute="bottom" constant="50" id="i0C-Mv-kwY"/>
+                                                    <constraint firstItem="0Vh-mp-GaX" firstAttribute="top" secondItem="Ziq-Ub-FEK" secondAttribute="bottom" id="i0C-Mv-kwY"/>
                                                     <constraint firstItem="iIC-d3-wgW" firstAttribute="top" secondItem="NOY-qX-IAq" secondAttribute="bottom" constant="8" symbolic="YES" id="u9W-a3-spd"/>
                                                 </constraints>
                                             </view>
@@ -212,11 +218,14 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newYork" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-FV-tKO">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="384.5"/>
                                             </imageView>
-                                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-v5-z25">
+                                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-v5-z25">
                                                 <rect key="frame" x="40" y="40" width="334" height="304.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eas-2t-n4j">
-                                                        <rect key="frame" x="314" y="34.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="314" y="34.5" width="0.0" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="bgj-Lc-j0t"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -231,7 +240,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cq-2I-SEz">
-                                                        <rect key="frame" x="20" y="34.5" width="274" height="0.0"/>
+                                                        <rect key="frame" x="20" y="34.5" width="274" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="pYO-wW-zQK"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -244,7 +256,7 @@
                                                 <constraints>
                                                     <constraint firstItem="0cq-2I-SEz" firstAttribute="top" secondItem="zi7-sk-wTW" secondAttribute="bottom" constant="8" symbolic="YES" id="0gc-5N-WXO"/>
                                                     <constraint firstItem="KLr-kr-ZHO" firstAttribute="leading" secondItem="4p5-v5-z25" secondAttribute="leading" constant="50" id="2Ad-sx-yAh"/>
-                                                    <constraint firstItem="KLr-kr-ZHO" firstAttribute="top" secondItem="Eas-2t-n4j" secondAttribute="bottom" constant="50" id="6ff-Rf-fKz"/>
+                                                    <constraint firstItem="KLr-kr-ZHO" firstAttribute="top" secondItem="Eas-2t-n4j" secondAttribute="bottom" id="6ff-Rf-fKz"/>
                                                     <constraint firstItem="Eas-2t-n4j" firstAttribute="top" secondItem="zi7-sk-wTW" secondAttribute="bottom" constant="8" symbolic="YES" id="NgP-TS-J9b"/>
                                                     <constraint firstAttribute="trailing" secondItem="KLr-kr-ZHO" secondAttribute="trailing" constant="50" id="WLj-bu-v3O"/>
                                                     <constraint firstItem="0cq-2I-SEz" firstAttribute="leading" secondItem="4p5-v5-z25" secondAttribute="leading" constant="20" id="gor-6k-pOv"/>
@@ -291,7 +303,7 @@
                             <constraint firstItem="tYJ-et-B1G" firstAttribute="trailing" secondItem="PAD-eq-wro" secondAttribute="trailing" id="zIr-Su-B93"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Météo" id="nV9-MD-dRp"/>
+                    <tabBarItem key="tabBarItem" title="Météo" image="application-meteo-3" id="nV9-MD-dRp"/>
                     <connections>
                         <outlet property="newYorView" destination="EIc-XE-TFl" id="hdD-ID-fHz"/>
                         <outlet property="newYorkDescriptionLabel" destination="0cq-2I-SEz" id="kDD-Pl-T88"/>
@@ -414,7 +426,7 @@
                             <constraint firstItem="nlv-r9-vNW" firstAttribute="top" secondItem="gbN-Ue-gX6" secondAttribute="top" id="yd5-z4-53D"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Taux de change" id="ULJ-bE-1aC"/>
+                    <tabBarItem key="tabBarItem" title="Taux de change" image="changer" id="ULJ-bE-1aC"/>
                     <connections>
                         <outlet property="containerView" destination="4hO-rZ-zfe" id="Yfq-t9-eaC"/>
                         <outlet property="moneySegmented" destination="rQc-Pp-MkR" id="eSx-Km-OTJ"/>
@@ -448,9 +460,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="application-meteo-3" width="24" height="24"/>
+        <image name="changer" width="24" height="24"/>
         <image name="dollarEuros" width="1200" height="630"/>
         <image name="newYork" width="720" height="450"/>
         <image name="paris" width="625" height="437"/>
+        <image name="traduire" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

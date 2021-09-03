@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var parisTemperatureLabel: UILabel!
     @IBOutlet weak var parisDescriptionLabel: UILabel!
     @IBOutlet weak var parisLogoWeatherImage: UIImageView!
+    @IBOutlet weak var parisLoader: UIActivityIndicatorView!
     
     
     //NewYork
@@ -22,6 +23,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var newYorkTemperatureLabel: UILabel!
     @IBOutlet weak var newYorkDescriptionLabel: UILabel!
     @IBOutlet weak var newYorkLogoWeatherImage: UIImageView!
+    @IBOutlet weak var newYorkLoader: UIActivityIndicatorView!
     
     
     var paris = Weather(cityName: "Paris")
@@ -30,7 +32,6 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeather()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,13 +40,13 @@ class WeatherViewController: UIViewController {
     
     func updateView() {
         parisTemperatureLabel.text = paris.temperatureString
-        parisDescriptionLabel.text = paris.description
+        parisDescriptionLabel.text = paris.descriptionWithFirstLetterUppercase
         parisLogoWeatherImage.image = UIImage(named: paris.image)
-        print(paris.description)
         
         newYorkTemperatureLabel.text = newYork.temperatureString
-        newYorkDescriptionLabel.text = newYork.description
+        newYorkDescriptionLabel.text = newYork.descriptionWithFirstLetterUppercase
         newYorkLogoWeatherImage.image = UIImage(named: newYork.image)
+        
     }
     
     func getWeather() {

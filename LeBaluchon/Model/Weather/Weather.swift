@@ -16,6 +16,9 @@ struct Weather {
     }
     var skyStateCode : Int = 0
     var description: String = ""
+    var descriptionWithFirstLetterUppercase: String {
+        description.capitalizingFirstLetter()
+    }
     var image: String {
         renderLogoWeather()
     }
@@ -53,5 +56,16 @@ struct Weather {
         
         
         return goodImage
+    }
+}
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+      return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+      self = self.capitalizingFirstLetter()
     }
 }
