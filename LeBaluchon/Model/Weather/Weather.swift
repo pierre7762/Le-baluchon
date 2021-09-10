@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Weather {
     let cityName: String
     var temperature: Double = 0.0

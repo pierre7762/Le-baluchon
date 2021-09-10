@@ -47,5 +47,7 @@ class WeatherTestCase: XCTestCase {
  
         XCTAssertEqual(resultReal, resultExpected)
     }
+    
+    
 }
 

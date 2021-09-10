@@ -28,10 +28,7 @@ final class FixerService {
     // MARK: - Methods
     
     func getExchangeRate(callback: @escaping (Result<ExchangeRating, NetworkErrors>) -> Void) {
-        guard let baseURL: URL = .init(string: baseStringURL) else {
-            callback(.failure(.invalidURL))
-            return
-        }
+        guard let baseURL: URL = .init(string: baseStringURL) else { return }
         let url : URL = encode(with: baseURL, and: [("access_key", "d95d422992002c68a33a9a9766fa1dcf")])
         NetworkLogger(url: url).show()
         #if DEBUG

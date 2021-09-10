@@ -36,7 +36,7 @@ class ConvertViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         resultConvertLabel.text = "€"
-        converter.updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+        updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
     }
     
     //MARK: functions
@@ -56,7 +56,17 @@ class ConvertViewController: UIViewController {
                 }
             }
         }
-        converter.updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+        updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+    }
+    
+    func updateView(textTopOfSegmented: UILabel, resultLabel: UILabel) {
+        textTopOfSegmented.text = "Devise de départ -> \(converter.startingCurrenciesSymbole)"
+        
+        if converter.startingCurrencies == .dollar {
+            resultLabel.text = "\(converter.result) \(converter.currencyOfTheResultSymbole) \n taux(\(converter.rateDollarToEuro))"
+        } else {
+            resultLabel.text = "\(converter.result) \(converter.currencyOfTheResultSymbole) \n taux(\(converter.rateEuroToDollar))"
+        }
     }
     
     func changeViewStyle() {
@@ -79,11 +89,11 @@ class ConvertViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             converter.startingCurrencies = .euros
-            converter.updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+            updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
 
         case 1:
             converter.startingCurrencies = .dollar
-            converter.updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+            updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
         default:
             return
         }
@@ -93,7 +103,7 @@ class ConvertViewController: UIViewController {
         let text = sender.text ?? ""
         let textInDouble = Double(text) ?? 0
         converter.startedValue = textInDouble
-        converter.updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
+        updateView(textTopOfSegmented: textSegmentedLabel, resultLabel: resultConvertLabel)
         keyboardIsOpen = true
     }
     

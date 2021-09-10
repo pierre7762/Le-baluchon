@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Converter {
     var startingCurrencies: CurrenciesList
@@ -59,33 +58,17 @@ struct Converter {
         Double(round(1000000*(1/self.rateEuroToDollar))/1000000)
     }
     
-    mutating func updateView(textTopOfSegmented: UILabel, resultLabel: UILabel) {
-        textTopOfSegmented.text = "Devise de départ -> \(self.startingCurrenciesSymbole)"
-        
-        if self.startingCurrencies == .dollar {
-            resultLabel.text = "\(self.result) \(self.currencyOfTheResultSymbole) \n taux(\(self.rateDollarToEuro))"
-        } else {
-            resultLabel.text = "\(self.result) \(self.currencyOfTheResultSymbole) \n taux(\(self.rateEuroToDollar))"
-        }
-    }
-    
     private mutating func updateCurrencyOfTheResult() -> CurrenciesList {
-        var result: CurrenciesList
         if startingCurrencies == .dollar {
-            result = .euros
-        } else {
-            result = .dollar
+            return .euros
         }
-        return result
+        return .dollar
     }
     
     private func giveSymbolCurrencies(currencie: CurrenciesList) -> String {
-        var result: String
         if currencie == .dollar {
-            result = "$"
-        } else {
-            result = "€"
+            return "$"
         }
-        return result
+        return "€"
     }
 }

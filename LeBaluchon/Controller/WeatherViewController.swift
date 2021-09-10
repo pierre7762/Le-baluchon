@@ -24,6 +24,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var newYorkDescriptionLabel: UILabel!
     @IBOutlet weak var newYorkLogoWeatherImage: UIImageView!
     @IBOutlet weak var newYorkLoader: UIActivityIndicatorView!
+    @IBOutlet weak var backgroundPostItParisView: UIView!
+    @IBOutlet weak var backgroundPostitViewNewYork: UIView!
     
     
     var paris = Weather(cityName: "Paris")
@@ -32,6 +34,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +49,9 @@ class WeatherViewController: UIViewController {
         newYorkTemperatureLabel.text = newYork.temperatureString
         newYorkDescriptionLabel.text = newYork.descriptionWithFirstLetterUppercase
         newYorkLogoWeatherImage.image = UIImage(named: newYork.image)
+        
+        backgroundPostItParisView.layer.cornerRadius = 20
+        backgroundPostitViewNewYork.layer.cornerRadius = 20
         
     }
     

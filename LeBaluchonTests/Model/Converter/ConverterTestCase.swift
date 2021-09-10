@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import UIKit
+
 @testable import LeBaluchon
 
 class ConverterTestCase: XCTestCase {
@@ -38,23 +38,6 @@ class ConverterTestCase: XCTestCase {
         realResult.append(convert.result)
         
         XCTAssertEqual(realResult, resultExpected)
-    }
-    
-    func testGiven_When_Then() {
-        let labelTop = UILabel()
-        labelTop.text = "start"
-        let resultLabel = UILabel()
-        resultLabel.text = "start"
-        convert.startingCurrencies = .dollar
-        convert.startedValue = 6
-        convert.rateEuroToDollar = 2
-        let resultExpected = "3.0"
-        
-        convert.updateView(textTopOfSegmented: labelTop, resultLabel: resultLabel)
-        
-        
-        
-        XCTAssertEqual(convert.result, resultExpected)
     }
 
 }

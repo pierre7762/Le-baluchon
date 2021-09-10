@@ -6,28 +6,23 @@
 //
 
 import Foundation
-import UIKit
 
 struct Translater {
     var sourceLanguage: LanguageList
     var sourcetext: String = ""
     var targetLanguage: LanguageList {
-        var targetLang: LanguageList
         if sourceLanguage == .en {
-            targetLang = .fr
-        } else {
-            targetLang = .en
+            return .fr
         }
-        return targetLang
+        return .en
     }
     var targetLanguageString: String {
-        var targetLanguageStr: String
+//        var targetLanguageStr: String
         if targetLanguage == .en {
-            targetLanguageStr = "en"
-        } else {
-            targetLanguageStr = "fr"
+            return "en"
         }
-        return targetLanguageStr
+        return "fr"
+//        return targetLanguageStr
     }
     var translatedText: String = ""
     

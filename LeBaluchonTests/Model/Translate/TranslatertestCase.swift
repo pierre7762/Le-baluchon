@@ -29,6 +29,7 @@ class TranslaterTestCase: XCTestCase {
         XCTAssertEqual(translate.targetLanguageString, "en")
 
     }
+    
 
 
 }
