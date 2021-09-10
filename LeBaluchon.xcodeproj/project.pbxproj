@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070ECB9526EBBDC4008CCA64 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 070ECB9426EBBDC4008CCA64 /* weather.json */; };
 		56A3587C26A186B80062FF6A /* FixerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3587B26A186B80062FF6A /* FixerService.swift */; };
 		8F2C454526EB4A5F008D4680 /* URLProtocolFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C454426EB4A5F008D4680 /* URLProtocolFake.swift */; };
 		8F2C454726EB4AD9008D4680 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C454626EB4AD9008D4680 /* FakeResponseData.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070ECB9426EBBDC4008CCA64 /* weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
 		56A3587B26A186B80062FF6A /* FixerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerService.swift; sourceTree = "<group>"; };
 		8F2C454426EB4A5F008D4680 /* URLProtocolFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolFake.swift; sourceTree = "<group>"; };
 		8F2C454626EB4AD9008D4680 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				8F2C454626EB4AD9008D4680 /* FakeResponseData.swift */,
 				8F2C454826EB4BF1008D4680 /* fixer.json */,
 				8F78074F26EB7F6C00F14893 /* translate.json */,
+				070ECB9426EBBDC4008CCA64 /* weather.json */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			files = (
 				8F78075026EB7F6C00F14893 /* translate.json in Resources */,
 				8F2C454926EB4BF1008D4680 /* fixer.json in Resources */,
+				070ECB9526EBBDC4008CCA64 /* weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
