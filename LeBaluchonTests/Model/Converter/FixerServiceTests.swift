@@ -8,7 +8,7 @@
 import XCTest
 @testable import LeBaluchon
 
-class BinaryFixerServiceTests: XCTestCase {
+class FixerServiceTests: XCTestCase {
 
     private let sessionConfiguration: URLSessionConfiguration = {
         let sessionConfiguration = URLSessionConfiguration.ephemeral

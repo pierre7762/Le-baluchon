@@ -41,7 +41,9 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
     
     func getTranslation() {
         buttonTranslate.isEnabled = false
-        translaterService.getTranslation (callback: { [weak self] result in
+        translaterService.getTranslation (textToTranslate: translater.sourcetext,
+                                          languageTarget: translater.targetLanguageString,
+                                          callback: { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let translation):
@@ -53,7 +55,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
                 }
                 self?.buttonTranslate.isEnabled = true
             }
-        }, textToTranslate: translater.sourcetext, languageTarget: translater.targetLanguageString)
+        })
     }
 
     

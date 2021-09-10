@@ -24,8 +24,8 @@ class FakeResponseData {
     }
     
     static var correctDataTranslate: Data {
-        let bundle = Bundle(for: FakeResponseDataTranslate.self)
-        let url = bundle.url(forResource: "BinaryConverter", withExtension: "json")
+        let bundle = Bundle(for: FakeResponseData.self)
+        let url = bundle.url(forResource: "translate", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         return data
     }

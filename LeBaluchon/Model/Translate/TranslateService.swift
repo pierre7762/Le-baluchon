@@ -22,11 +22,10 @@ final class TranslateService {
 
     // MARK: - Methods
     
-    func getTranslation(callback: @escaping (Result<TranslateResponse, NetworkErrors>) -> Void,  textToTranslate: String, languageTarget: String) {
-        guard let baseURL: URL = .init(string: baseStringURL) else {
-            callback(.failure(.invalidURL))
-            return
-        }
+    func getTranslation(textToTranslate: String,
+                        languageTarget: String,
+                        callback: @escaping (Result<TranslateResponse, NetworkErrors>) -> Void) {
+        guard let baseURL: URL = .init(string: baseStringURL) else { return }
         let url : URL = encode(with: baseURL, and: [("key", "AIzaSyAqOptFYO5x8Cz8KHX2rsaCCRepNmF67Vk"),("format", "text"), ("q",textToTranslate), ("target", languageTarget)])
         print(url)
        

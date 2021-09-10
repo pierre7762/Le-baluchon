@@ -39,5 +39,11 @@ class ConverterTestCase: XCTestCase {
         
         XCTAssertEqual(realResult, resultExpected)
     }
+    
+    func testGivenTheAppStart_WhenStartingCurrenciesIsDollar_ThencurrencyOfTheResultIsEuro() {
+        convert.startingCurrencies = .dollar
+
+        XCTAssertEqual(convert.currencyOfTheResult, .euros)
+    }
 
 }
