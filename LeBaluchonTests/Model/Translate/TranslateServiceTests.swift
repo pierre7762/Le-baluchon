@@ -23,55 +23,60 @@ class TranslateServiceTests: XCTestCase {
         
         let expectation = XCTestExpectation(description: "hello")
         sut.getTranslation(textToTranslate: "bonjour", languageTarget: "en") {result in
-            guard case .failure(let error) = result else {
-                XCTFail("Test failed: \(#function)")
-                return
-            }
+            guard case .failure(let error) = result else { return }
             XCTAssertTrue(error == .invalidResponse)
-            print()
+            XCTAssertTrue(error.description == "The answer is invalide")
            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testsFetchTranslate_WhenFakeSessionWithIncorrectDataAndValidResponseArePassed_ThenShouldReturnAnError() {
-        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (FakeResponseData.incorrectData, FakeResponseData.responseKO, nil)]
-        let fakeSession = URLSession(configuration: sessionConfiguration)
-        let sut: TranslateService = .init(session: fakeSession)
-        
-        let expectation = XCTestExpectation(description: "hello")
-        sut.getTranslation(textToTranslate: "bonjour", languageTarget: "en") {result in
-            guard case .failure(let error) = result else {
-                XCTFail("Test failed: \(#function)")
-                return
-            }
-            XCTAssertTrue(error == .invalidResponse)
-            print()
-           expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 0.01)
-    }
+//    func testsFetchTranslate_WhenFakeSessionWith_ThenShouldReturnNoData() {
+//        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (nil, nil, FakeResponseData.error)]
+//        let fakeSession = URLSession(configuration: sessionConfiguration)
+//        let sut: TranslateService = .init(session: fakeSession)
+//
+//        let expectation = XCTestExpectation(description: "hello")
+//        sut.getTranslation(textToTranslate: "bonjour", languageTarget: "en") {result in
+//            guard case .failure(let error) = result else { return }
+//            XCTAssertTrue(error == .noData)
+//            print()
+//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+//            print(error)
+//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+//            print()
+//           expectation.fulfill()
+//        }
+//        wait(for: [expectation], timeout: 0.01)
+//    }
     
-    func testsFetchTranslate_WhenFakeSessionWithIncorrectDataAndValidResponseArePassed_ThenShouldReturnAnErro() {
-        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (FakeResponseData.incorrectData, FakeResponseData.responseKO, nil)]
+    func testsFetchTranslate_WhenGoodRequestSend_ThenShouldBeReturnSuccess() {
+        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (FakeResponseData.correctDataTranslate, FakeResponseData.responseOK, nil)]
         let fakeSession = URLSession(configuration: sessionConfiguration)
         let sut: TranslateService = .init(session: fakeSession)
-        
+
         let expectation = XCTestExpectation(description: "hello")
-        sut.getTranslation(textToTranslate: "bonjour", languageTarget: "en") {result in
-            guard case .failure(let error) = result else {
-                XCTFail("Test failed: \(#function)")
-                return
-            }
-            print("--------!!!!!!!!!!!!!!!!!--------------")
-            print(error)
-            print("--------!!!!!!!!!!!!!!!!!--------------")
-            XCTAssertTrue(error == .invalidResponse)
-            print()
+        sut.getTranslation(textToTranslate: "Bonjour", languageTarget: "en") {result in
+            guard case .success(let success) = result else { return }
+            XCTAssertEqual(success.data.translations[0].translatedText, "Hello")
            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
 
+    func testsFetchTranslate_WhenWeRecevedBadResponse_ThenShouldBeReturnUndecodable() {
+        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (FakeResponseData.incorrectData, FakeResponseData.responseOK, nil)]
+        let fakeSession = URLSession(configuration: sessionConfiguration)
+        let sut: TranslateService = .init(session: fakeSession)
+
+        let expectation = XCTestExpectation(description: "hello")
+        sut.getTranslation(textToTranslate: "Bonjour", languageTarget: "en") {result in
+            guard case .failure(let error) = result else { return }
+            XCTAssertTrue(error == .undecodableData)
+            XCTAssertTrue(error.description == "Decoding problem")
+           expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.01)
+    }
 
 }
