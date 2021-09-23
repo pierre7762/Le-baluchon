@@ -15,7 +15,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var buttonTranslate: CustomButton!
     
     var text: String = ""
-    var translater = Translater(sourceLanguage: .fr)
+    var translater = Translater(targetLanguage: .en)
     let translaterService = TranslateService()
     
     override func viewDidLoad() {
@@ -65,8 +65,8 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func choiceOfLanguagePressed(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: translater.sourceLanguage = .fr
-        case 1: translater.sourceLanguage = .en
+        case 0: translater.targetLanguage = .en
+        case 1: translater.targetLanguage = .fr
         default:
             break
         }
