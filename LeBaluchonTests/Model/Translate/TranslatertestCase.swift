@@ -15,18 +15,16 @@ class TranslaterTestCase: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        translate = Translater(sourceLanguage: .en)
+        translate = Translater(targetLanguage: .en)
     }
     
-    func testGivenAppStart_WhenSourceLanguageIsEnglish_ThenReturnFrench() {
-        XCTAssertEqual(translate.targetLanguage, .fr)
-        XCTAssertEqual(translate.targetLanguageString, "fr")
-    }
-    
-    func testGivenAppStart_WhenSourceLanguageIsFrench_ThenReturnEnglish() {
-        translate.sourceLanguage = .fr
-        XCTAssertEqual(translate.targetLanguage, .en)
+    func testGivenAppStart_WhenTargetLanguageIsEnglish_ThenReturnEN() {
         XCTAssertEqual(translate.targetLanguageString, "en")
+    }
+    
+    func testGivenAppStart_WhenTargetLanguageIsFrench_ThenReturnFR() {
+        translate.targetLanguage = .fr
+        XCTAssertEqual(translate.targetLanguageString, "fr")
 
     }
     
