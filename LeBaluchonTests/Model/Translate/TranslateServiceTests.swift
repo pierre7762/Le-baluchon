@@ -31,25 +31,6 @@ class TranslateServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-//    func testsFetchTranslate_WhenFakeSessionWith_ThenShouldReturnNoData() {
-//        URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (nil, nil, FakeResponseData.error)]
-//        let fakeSession = URLSession(configuration: sessionConfiguration)
-//        let sut: TranslateService = .init(session: fakeSession)
-//
-//        let expectation = XCTestExpectation(description: "hello")
-//        sut.getTranslation(textToTranslate: "bonjour", languageTarget: "en") {result in
-//            guard case .failure(let error) = result else { return }
-//            XCTAssertTrue(error == .noData)
-//            print()
-//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-//            print(error)
-//            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-//            print()
-//           expectation.fulfill()
-//        }
-//        wait(for: [expectation], timeout: 0.01)
-//    }
-    
     func testsFetchTranslate_WhenGoodRequestSend_ThenShouldBeReturnSuccess() {
         URLProtocolFake.fakeURLs = [FakeResponseData.translateUrl: (FakeResponseData.correctDataTranslate, FakeResponseData.responseOK, nil)]
         let fakeSession = URLSession(configuration: sessionConfiguration)
