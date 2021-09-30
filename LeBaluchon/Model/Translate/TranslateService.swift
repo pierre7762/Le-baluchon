@@ -13,6 +13,7 @@ final class TranslateService {
 
     private let session: URLSession
     private let baseStringURL: String = "https://translation.googleapis.com/language/translate/v2?"
+    private let translaterKey = ApiKeys().translaterKey
 
     // MARK: - Initializer
 
@@ -26,7 +27,7 @@ final class TranslateService {
                         languageTarget: String,
                         callback: @escaping (Result<TranslateResponse, NetworkErrors>) -> Void) {
         guard let baseURL: URL = .init(string: baseStringURL) else { return }
-        let url : URL = encode(with: baseURL, and: [("key", "AIzaSyAqOptFYO5x8Cz8KHX2rsaCCRepNmF67Vk"),("format", "text"), ("q",textToTranslate), ("target", languageTarget)])
+        let url : URL = encode(with: baseURL, and: [("key", translaterKey),("format", "text"), ("q",textToTranslate), ("target", languageTarget)])
         print(url)
        
         #if DEBUG

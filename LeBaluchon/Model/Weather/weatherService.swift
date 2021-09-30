@@ -13,6 +13,7 @@ final class WeatherService {
 
     private let session: URLSession
     private let baseStringURL: String = "http://api.openweathermap.org/data/2.5/group?"
+    private let weatherKey = ApiKeys().weatherKey
 
     // MARK: - Initializer
 
@@ -24,7 +25,7 @@ final class WeatherService {
     
     func getWeather(callback: @escaping (Result<WeatherApi, NetworkErrors>) -> Void) {
         guard let baseURL: URL = .init(string: baseStringURL) else { return }
-        let url : URL = encode(with: baseURL, and: [("id","2988507,5128581"), ("units", "metric"), ("appid", "be1be5d48dcaafb96f5e605dbac4a4ed"), ("lang", "fr") ])
+        let url : URL = encode(with: baseURL, and: [("id","2988507,5128581"), ("units", "metric"), ("appid", weatherKey), ("lang", "fr") ])
         print(url)
        
         #if DEBUG

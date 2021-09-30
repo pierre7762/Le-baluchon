@@ -18,6 +18,7 @@ final class FixerService {
     private let session: URLSession
     private var task: URLSessionDataTask?
     private let baseStringURL: String = "http://data.fixer.io/api/latest"
+    private let fixerKey = ApiKeys().fixerKey
 
     // MARK: - Initializer
 
@@ -29,7 +30,7 @@ final class FixerService {
     
     func getExchangeRate(callback: @escaping (Result<ExchangeRating, NetworkErrors>) -> Void) {
         guard let baseURL: URL = .init(string: baseStringURL) else { return }
-        let url : URL = encode(with: baseURL, and: [("access_key", "d95d422992002c68a33a9a9766fa1dcf")])
+        let url : URL = encode(with: baseURL, and: [("access_key", fixerKey)])
         NetworkLogger(url: url).show()
         #if DEBUG
         task?.cancel()
