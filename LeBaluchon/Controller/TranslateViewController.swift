@@ -33,6 +33,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
         textV.layer.borderColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         textV.layer.borderWidth = 3
         textV.layer.cornerRadius = 20
+        textV.contentInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
     }
     
     func textViewDidChange(_ textView: UITextView) {
